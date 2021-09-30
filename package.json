@@ -15,7 +15,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^4.0.3",
     "reactstrap": "^8.4.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "serve": "^12.0.1"
   },
   "devDependencies": {
     "ajv": "^6.9.1",
@@ -27,11 +28,12 @@
     "extends": "react-app"
   },
   "scripts": {
-    "start": "npm install && rimraf ./build && react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
-    "test": "cross-env CI=true react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint ./src/"
+    "heroku-postbuild": "npm run build"
   },
   "browserslist": {
     "production": [
